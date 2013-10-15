@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
 	
 	grunt.initConfig({
-		gmapsCss: {
+		gmapscss: {
 			all: {
 				files: [{
 					expand: true,

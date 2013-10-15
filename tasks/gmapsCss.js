@@ -2,7 +2,7 @@
 
 module.exports = function(grunt) {
 	var gcss = require('gmaps-css');
-	grunt.registerMultiTask('gmapsCss', 'Convert .gcss to Google Maps style', function() {
+	grunt.registerMultiTask('gmapscss', 'Convert .gcss to Google Maps style', function() {
 		this.files.forEach(function(file) {
 			var str = 'var GMAPS_STYLES = ';
 			file.src.forEach(function(filepath) {
