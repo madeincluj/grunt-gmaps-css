@@ -1,0 +1,14 @@
+{
+  "name": "grunt-gmaps-css",
+  "version": "0.1.0",
+  "dependencies": {
+    "gmaps-css": "~0.1.5"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.0"
+  },
+  "keywords": [
+  	"gruntplugin",
+  	"google-maps"
+  ]
+}
