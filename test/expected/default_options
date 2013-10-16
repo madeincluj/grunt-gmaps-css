@@ -7,5 +7,14 @@ var GMAPS_STYLES = [
         "hue": "#FFFFFF"
       }
     ]
+  },
+  {
+    "featureType": "all",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "hue": "#CC0000"
+      }
+    ]
   }
 ];
