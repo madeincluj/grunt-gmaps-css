@@ -13,10 +13,20 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('gmaps_css', 'Convert .gcss to Google Maps style', function() {
     this.files.forEach(function(file) {
       var str = 'var GMAPS_STYLES = ';
-      var arrays = file.src.map(function(filepath) {
-        var f = grunt.file.read(filepath);
-        return gcss.parse(f);
-      });
+      var arrays = file.src
+        .filter(function(filepath) {
+          // Warn on and remove invalid source files
+          if (!grunt.file.exists(filepath)) {
+            grunt.log.warn('Source file "' + filepath + '" not found.');
+            return false;
+          } else {
+            return true;
+          }
+        })
+        .map(function(filepath) {
+          var f = grunt.file.read(filepath);
+          return gcss.parse(f);
+        });
       var arr = Array.prototype.concat.apply([], arrays);
       str += JSON.stringify(arr, null, 2);
       str += ';';
